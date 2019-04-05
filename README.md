@@ -1,6 +1,7 @@
-# 何ができるの
+# 手順実施における成果物
 - zabbix server 4.0 LTS
 - zabbix action
+
 ## requeired
 - amzn2
 - t3.small 以上相当のインスタンスタイプ
