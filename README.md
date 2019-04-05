@@ -16,6 +16,10 @@ http://${INSTANCE_GLOBAL_IP}/zabbix
 **※注意事項**
 - インストールにおけるdbname, dbpassなど適当なので適宜変更してください
 
+## これもやっとけ手順
+- swap領域割り当て  
+https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
+
 ## Zabbix設定リソース
 **Action**
 ```
@@ -38,4 +42,3 @@ B トリガーの値=障害
 ```
 ユーザーグループにメッセージを送信
 ```
-
