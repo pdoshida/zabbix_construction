@@ -1,4 +1,11 @@
-# Zabbixサーバーインストール
+# 何ができるの
+- zabbix server 4.0 LTS
+- zabbix action
+## requeired
+- amzn2
+- t3.small 以上相当のインスタンスタイプ
+
+## Zabbixサーバーインストール
 1. AmazonLinux2作成
 2. rootでシェル実行  
 ./install_zabbix4_amzn2.sh
