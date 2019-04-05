@@ -30,7 +30,8 @@ https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 {TRIGGER.STATUS}: {TRIGGER.NAME} : {HOST.NAME1}({TRIGGER.HOSTGROUP.NAME})
 
 デフォルトのメッセージ：　（リカバリメッセージも同様）
-{TRIGGER.STATUS}: {TRIGGER.NAME} : {HOST.NAME1}({TRIGGER.HOSTGROUP.NAME})
+{ITEM.VALUE1}
+Event ID: {EVENT.ID}
 ```
 **アクションの実行条件**
 ```
