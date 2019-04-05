@@ -24,7 +24,7 @@ https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 **Action**
 ```
 名前：
-適当なの
+NotificationAction
 
 デフォルトの件名： （復旧の件名も同様）
 {TRIGGER.STATUS}: {TRIGGER.NAME} : {HOST.NAME1}({TRIGGER.HOSTGROUP.NAME})
