@@ -9,7 +9,7 @@
 ## Zabbixサーバーインストール
 1. AmazonLinux2作成
 2. rootでシェル実行  
-./install_zabbix4_amzn2.sh
+bash -x install_zabbix4_amzn2.sh
 3. ブラウザからzabbix初期設定を行う  
 http://${INSTANCE_GLOBAL_IP}/zabbix
 
