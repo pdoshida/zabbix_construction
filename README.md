@@ -1,9 +1,15 @@
-# zabbix resource
+# Zabbixサーバーインストール
+1. AmazonLinux2作成
+2. rootでインストールシェル実行  
+`./install_zabbix4_amzn2.sh`
+3. ブラウザからzabbix初期設定を行う  
+http://${INSTANCE_GLOBAL_IP}/zabbix
 
+## Zabbix設定リソース
 **Action**
 ```
 名前：
-適当な物を。
+適当なの
 
 デフォルトの件名： （復旧の件名も同様）
 {TRIGGER.STATUS}: {TRIGGER.NAME} : {HOST.NAME1}({TRIGGER.HOSTGROUP.NAME})
