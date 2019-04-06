@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 # Slack incoming web-hook URL
-SLACK_WEBHOOKSURL='https://hooks.slack.com/services/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'
+SLACK_WEBHOOKSURL='https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 # Slack UserName
 SLACK_USERNAME='Zabbix'
@@ -16,14 +16,17 @@ ALERT_SUBJECT="$2"
 # "Default message" for Action Operations Setting
 ALERT_MESSAGE="$3"
 
-if [ "${ALERT_SUBJECT%%:*}" == 'OK' ]; then
+OK_STR="Resolved"
+NG_STR="Problem"
+
+if [[ "${ALERT_SUBJECT}" =~ ^${OK_STR}.*  ]]; then
         ICON=':smile:'
         COLOR="good"
-elif [ "${ALERT_SUBJECT%%:*}" == 'PROBLEM' ]; then
+elif [[ "${ALERT_SUBJECT}" =~ ^${NG_STR}.* ]]; then
         ICON=':skull:'
         COLOR="danger"
 else
-        ICON=':innocent:'
+        #ICON=':innocent:'
         ICON=':sushi:'
         COLOR="#439FE0"
 fi
@@ -36,7 +39,7 @@ PAYLOAD="payload={
     \"attachments\": [
         {
             \"color\": \"${COLOR}\",
-            \"text\": \"${ALERT_MESSAGE//\"/\\\"}\"
+            \"text\": \"${ALERT_SUBJECT//\"/\\\"}\"
         }
     ]
 }"
