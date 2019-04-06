@@ -60,35 +60,27 @@ https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 ```hostnamectl set-hostname zabbix40```
 
 ## Zabbix設定リソース
-**Action**
-```
-名前：
-NotificationAction
-
-デフォルトの件名： （復旧の件名も同様）
-{TRIGGER.STATUS}: {TRIGGER.NAME} : {HOST.NAME1}({TRIGGER.HOSTGROUP.NAME})
-
-デフォルトのメッセージ：　（リカバリメッセージも同様）
-{ITEM.VALUE1}
-Event ID: {EVENT.ID}
-```
-**アクションの実行条件**
-```
-And/Or A and B
-A メンテナンスの状態
-B トリガーの値=障害
-```
-**アクションの実行内容**
-```
-ユーザーグループにメッセージを送信
-```
 **スクリプトタイプ**
+- slack.shの配置。 `/usr/lib/zabbix/alertscripts`
+- sendmail.shの配置 `/usr/lib/zabbix/alertscripts`
+- ZabbixWEBでスクリプトタイプの追加
 ```
-スクリプト
-slack.sh
-
+1. スクリプト slack.sh
+スクリプトパラメータ
+{ALERT.SENDTO}
+{ALERT.SUBJECT}
+{ALERT.MESSAGE}
+2. スクリプト sendmail.sh
 スクリプトパラメータ
 {ALERT.SENDTO}
 {ALERT.SUBJECT}
 {ALERT.MESSAGE}
 ```
+
+**ユーザー**
+- Adminのメディアにsendmailとslackを追加する
+
+**Action**
+- 名前、条件など適当に。メッセージなどデフォでOK.
+  - 通知だけなら名前は `NotificationAction` が好きです。
+- 通知先ユーザーをAdminにする
