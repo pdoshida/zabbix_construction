@@ -54,8 +54,9 @@ timedatectl set-timezone Asia/Tokyo
 6.    /etc/fstab ファイルを編集して、起動時にスワップファイルを有効にします。
 
 ```
-$ vi /etc/fstab
-$ /swapfile swap swap defaults 0 0
+vi /etc/fstab
+---
+/swapfile swap swap defaults 0 0
 ```
 
 ** ホスト名変更
