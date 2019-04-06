@@ -1,6 +1,7 @@
 # 手順実施における成果物
-- zabbix server 4.0 LTS
-- zabbix action (slack)
+- zabbix
+  - server 4.0 LTS
+  - action (slack)
 
 ## requeired
 - amzn2
