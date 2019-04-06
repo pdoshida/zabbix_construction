@@ -31,9 +31,9 @@ timedatectl set-timezone Asia/Tokyo
 |  2 GB 以上の RAM 容量 (最大 32 GB) | 4 GB + (RAM – 2 GB) |
 |  32 GB 以上の RAM | RAM 容量の 1 倍 |
 
-1.    dd コマンドを使用してルートファイルシステムにスワップファイルを作成します。ここで「bs」はブロックサイズ、「count」はブロック数です。この例で、スワップファイルは 4 GB です。
+1.    dd コマンドを使用してルートファイルシステムにスワップファイルを作成します。ここで「bs」はブロックサイズ、「count」はブロック数です。この例で、スワップファイルは 2 GB です。
 
-```dd if=/dev/zero of=/swapfile bs=1G count=4```
+```dd if=/dev/zero of=/swapfile bs=1G count=2```
 
 2.    スワップファイルの読み書きのアクセス許可を更新します。 
 
