@@ -30,23 +30,36 @@ timedatectl set-timezone Asia/Tokyo
 |  2 GB 以下の RAM | RAM 容量の 2 倍 (32 MB 以上) |
 |  2 GB 以上の RAM 容量 (最大 32 GB) | 4 GB + (RAM – 2 GB) |
 |  32 GB 以上の RAM | RAM 容量の 1 倍 |
+
 1.    dd コマンドを使用してルートファイルシステムにスワップファイルを作成します。ここで「bs」はブロックサイズ、「count」はブロック数です。この例で、スワップファイルは 4 GB です。
+
 ```dd if=/dev/zero of=/swapfile bs=1G count=4```
+
 2.    スワップファイルの読み書きのアクセス許可を更新します。 
+
 ```chmod 600 /swapfile```
+
 3.    Linux スワップ領域のセットアップ: 
+
 ```mkswap /swapfile```
+
 4.    スワップ領域にスワップファイルを追加して、スワップファイルを即座に使用できるようにします。 
+
 ```swapon /swapfile```
+
 5.    手順が正常に完了したことを確認します。 
+
 ```swapon -s```
+
 6.    /etc/fstab ファイルを編集して、起動時にスワップファイルを有効にします。
+
 ```
 $ vi /etc/fstab
 $ /swapfile swap swap defaults 0 0
 ```
 
 参考
+
 https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 
 ## Zabbix設定リソース
