@@ -19,11 +19,11 @@ http://${INSTANCE_GLOBAL_IP}/zabbix
 
 
 ## OS設定変更
-- TimeZone変更
+**TimeZone変更**
 ```
 timedatectl set-timezone Asia/Tokyo
 ```
-- swap領域割り当て  
+**swap領域割り当て**
 
 |  物理 RAM の量 | 推奨されるスワップ領域 |
 | :---: | :---: |
@@ -57,6 +57,9 @@ timedatectl set-timezone Asia/Tokyo
 $ vi /etc/fstab
 $ /swapfile swap swap defaults 0 0
 ```
+
+** ホスト名変更
+```hostnamectl set-hostname zabbix40```
 
 参考
 
