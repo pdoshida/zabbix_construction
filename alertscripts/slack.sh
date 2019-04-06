@@ -33,7 +33,7 @@ fi
 
 # Create JSON payload
 PAYLOAD="payload={
-    \"text\": \"${ALERT_SUBJECT//\"/\\\"}\"
+    \"text\": \"${ALERT_SUBJECT//\"/\\\"}\",
     \"channel\": \"${NOTIFY_CHANNEL//\"/\\\"}\",
     \"username\": \"${SLACK_USERNAME//\"/\\\"}\",
     \"icon_emoji\": \"${ICON}\",
