@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ###############################
+# 同じVPCならlocal IPを記載
 Z_Server=xx.xx.xx.xx
 Z_Metadata=XXX_autoregistration
 ###############################
