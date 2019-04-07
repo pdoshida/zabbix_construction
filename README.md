@@ -82,10 +82,32 @@ https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 **ユーザー**
 - Adminのメディアにsendmailとslackを追加する
 
-**Action**
+**Action (Notify)**
 - 名前、条件など適当に。メッセージなどデフォでOK.
   - 通知だけなら名前は `NotificationAction` が好きです。
 - 通知先ユーザーをAdminにする
+
+**Action (自動登録)**
+- 名前 agentのメタタグと同様に。
+- 実行条件
+
+サンプル
+
+```
+web_autoregistration
+cms_autoregistration
+api_autoregistration
+batch_autoregistration
+```
+
+- 実行内容
+
+```
+ユーザーにメッセージを送信: Admin (Zabbix Administrator) via すべてのメディア
+ホストを追加
+ホストグループに追加: web
+テンプレートとリンク: Template OS Linux
+```
 
 ## Zabbixエージェント設定
 cloneしてから実行
