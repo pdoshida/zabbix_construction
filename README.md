@@ -7,11 +7,12 @@
 ## requeired
 - amzn2
 - t3.small 以上相当のインスタンスタイプ
+- ec2のタグ付与権限を持ったIAM User
 
 ## Zabbixサーバーインストール
 1. AmazonLinux2作成
 2. rootでシェル実行  
-`bash -x install_zabbix4_amzn2.sh`
+`bash -x install_zabbix4_server_amzn2.sh`
 3. ブラウザからzabbix初期設定を行う  
 `http://${インスタンスIP}/zabbix`
 
@@ -85,3 +86,17 @@ https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 - 名前、条件など適当に。メッセージなどデフォでOK.
   - 通知だけなら名前は `NotificationAction` が好きです。
 - 通知先ユーザーをAdminにする
+
+## Zabbixエージェント設定
+cloneしてから実行
+
+**ホスト名変更**
+
+```
+cat renamehost >>/etc/rc.local
+chmod +x /etc/rc.local
+```
+
+***エージェント導入**
+
+```bash -x install_zabbix4_agent_amzn2.sh```
