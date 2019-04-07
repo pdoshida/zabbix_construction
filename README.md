@@ -1,7 +1,8 @@
-# 手順実施における成果物
+# 成果物
 - zabbix
-  - server 4.0 LTS
+  - server4.0
   - action (slack)
+  - agent4.0
 
 ## requeired
 - amzn2
