@@ -1,6 +1,6 @@
 
 ## custom
-PREFIX="oshida-test"
+PREFIX="xxxxxx"
 
 LOCAL_IP=`curl -s http://169.254.169.254/latest/meta-data/local-ipv4`
 HOSTNUM=`echo ${LOCAL_IP} | awk -F'.' '{print $4}'`
