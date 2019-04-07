@@ -88,10 +88,11 @@ https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 - 通知先ユーザーをAdminにする
 
 **Action (自動登録)**
-- 名前 agentのメタタグと同様に。
+- 名前 
+適当に。
 - 実行条件
 
-サンプル
+サンプル　（agentのメタタグと一致させる）
 
 ```
 web_autoregistration
