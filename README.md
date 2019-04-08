@@ -110,6 +110,13 @@ batch_autoregistration
 テンプレートとリンク: Template OS Linux
 ```
 
+**ZabbixAPI準備**
+
+```
+curl -kL https://bootstrap.pypa.io/get-pip.py | python
+pip install pyzabbix
+```
+
 ## Zabbixエージェント設定
 cloneしてから実行
 
