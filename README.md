@@ -62,7 +62,7 @@ https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-memory-swap-file/
 ```hostnamectl set-hostname zabbix40```
 
 ## Zabbix設定リソース
-**管理 > スクリプト**
+**管理 > メディアタイプ**
 - slack.shの配置。 `/usr/lib/zabbix/alertscripts`
 - sendmail.shの配置 `/usr/lib/zabbix/alertscripts`
 - ZabbixWEBでスクリプトタイプの追加
