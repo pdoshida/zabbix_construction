@@ -123,10 +123,10 @@ cloneしてから実行
 **ホスト名変更**
 
 ```
-cat renamehost >>/etc/rc.local
+echo hostnamectl set-hostname zabbix40 >>/etc/rc.local
 chmod +x /etc/rc.local
 ```
 
-***エージェント導入**
+**エージェント導入**
 
 ```bash -x install_zabbix4_agent_amzn2.sh```
