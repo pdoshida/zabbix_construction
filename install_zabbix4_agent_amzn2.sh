@@ -13,11 +13,15 @@ yum install zabbix-agent -y
 # configure: agent
 zconf="/etc/zabbix/zabbix_agentd.conf"
 cp -p ${zconf} ${zconf}.org
-sed -i -e "s/^Server=127.0.0.1/Server=${Z_Server}/g" ${zconf}
-sed -i -e "s/^ServerActive=127.0.0.1/ServerActive=${Z_Server}/g" ${zconf}
-sed -i -e "s/^Hostname=Zabbix server/#Hostname=Zabbix server/g" ${zconf}
-sed -i -e "s/^# HostnameItem=system.hostname/HostnameItem=system.hostname/g" ${zconf}
-sed -i -e "s/^# HostMetadata=/HostMetadata=${Z_Metadata}/g" ${zconf}
+cat /dev/null > ${zconf}
+echo "PidFile=/var/run/zabbix/zabbix_agentd.pid" >> ${zconf}
+echo "LogFile=/var/log/zabbix/zabbix_agentd.log" >> ${zconf}
+echo "LogFileSize=0" >> ${zconf}
+echo "Server=${Z_Server}" >> ${zconf}
+echo "ServerActive=${Z_Server}" >> ${zconf}
+echo "Hostname=`uname -n`" >> ${zconf}
+echo "HostMetadata=${Z_Metadata}" >> ${zconf}
+echo "Include=/etc/zabbix/zabbix_agentd.d/*.conf" >> ${zconf}
 
 chkconfig zabbix-agent on
 chkconfig --list zabbix-agent
