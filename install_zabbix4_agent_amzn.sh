@@ -11,8 +11,8 @@ rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/6/x86_64/zabbix-release-4.0-1.el
 yum install zabbix-agent -y
 
 # configure: agent
-cp -p /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.org
 zconf="/etc/zabbix/zabbix_agentd.conf"
+cp -p ${zconf} ${zconf}.org
 cat /dev/null > ${zconf}
 echo "PidFile=/var/run/zabbix/zabbix_agentd.pid" >> ${zconf}
 echo "LogFile=/var/log/zabbix/zabbix_agentd.log" >> ${zconf}
