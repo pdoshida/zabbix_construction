@@ -23,7 +23,6 @@ echo "Hostname=`uname -n`" >> ${zconf}
 echo "HostMetadata=${Z_Metadata}" >> ${zconf}
 echo "Include=/etc/zabbix/zabbix_agentd.d/*.conf" >> ${zconf}
 
-chkconfig zabbix-agent on
-chkconfig --list zabbix-agent
-service zabbix-agent start
-service zabbix-agent status
+systemctl enable zabbix-agent
+systemctl start zabbix-agent
+systemctl status zabbix-agent
